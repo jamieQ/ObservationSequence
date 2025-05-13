@@ -267,3 +267,9 @@ public struct Observations<Element: Sendable, Failure: Error>: AsyncSequence, Se
     Iterator(state: state, emit: emit)
   }
 }
+
+extension Observations.Iterator {
+  public mutating func next() async throws -> Element? {
+    fatalError("should not be called")
+  }
+}
